@@ -29,33 +29,18 @@ const TAM_RODADA = 5;
 
 export default function GameContainer({ time1, time2, time1ponts, time2ponts, timeDavez, onPontuar, onFimRodada }: GameContainerProps) {
     const { secondsLeft } = useCountdown(30, {autoStart: true, onFinish: finalizarRodada});
-    const [deck, setDeck] = useState<Carta[]>(() => embaralharPalavras(cartas));
-    const [deckIndex, setDeckIndex] = useState(0);
     const [rodada, setRodada] = useState<Carta[]>([]);
     const [rodadaIndex, setRodadaIndex] = useState(0);
-    const [rodadaFinalizada, setRodadaFinalizada] = useState(false);
 
-    useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setDeckIndex((idx) => {
-            let d = deck;
-            let i = idx;
-
-            if (i + TAM_RODADA > deck.length) {
-                d = embaralharPalavras(cartas);
-                i = 0;
-                setDeck(d);
-            }
-
-            setRodada(d.slice(i, i + TAM_RODADA));
-            return i + TAM_RODADA;
-        })
-    }, [deck]);
+    useEffect(() => {  
+        const deckEmbaralhado = embaralharPalavras(cartas);  
+        setRodada(deckEmbaralhado.slice(0, TAM_RODADA));  
+        setRodadaIndex(0);  
+    }, []);
 
     const cartaAtual = rodada[rodadaIndex];
 
     function finalizarRodada(){
-        setRodadaFinalizada(true);
         onFimRodada();
     }
 

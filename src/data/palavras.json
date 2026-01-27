@@ -58,7 +58,7 @@
   { "palavra": "CASACO", "proibidas": ["FRIO", "INVERNO", "ROUPA", "AGASALHO", "JAQUETA"] },
   { "palavra": "CEREJA", "proibidas": ["FRUTA", "VERMELHA", "DOCE", "BOLO", "COQUETEL"] },
   { "palavra": "CHAVE", "proibidas": ["PORTA", "FECHADURA", "ABRIR", "CADEADO", "CARRO"] },
-  { "palavra": "CHINelo", "proibidas": ["PÉ", "SANDÁLIA", "CASA", "BORRACHA", "PRAIA"] },
+  { "palavra": "CHINELO", "proibidas": ["PÉ", "SANDÁLIA", "CASA", "BORRACHA", "PRAIA"] },
   { "palavra": "CHOCOLATE", "proibidas": ["DOCE", "CACAU", "BARRA", "BOMBOM", "DERRETER"] },
   { "palavra": "CHURRASCO", "proibidas": ["CARNE", "FOGO", "GRELHA", "ESPETO", "CHURRASQUEIRA"] },
   { "palavra": "DADO", "proibidas": ["JOGO", "SEIS", "NÚMEROS", "ROLAR", "TABULEIRO"] },
