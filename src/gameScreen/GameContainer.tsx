@@ -67,7 +67,7 @@ export default function GameContainer({ time1, time2, time1ponts, time2ponts, ti
 
 
     return (
-        <div className="bg-white min-w-96 rounded-2xl shadow-2xl flex-row justify-center items-center p-5">
+        <div className="bg-white max-w-84 lg:max-w-125 rounded-2xl shadow-2xl flex-row justify-center items-center p-5">
             <div className="flex justify-around items-center gap-5">
                 <div className="bg-gray-100 rounded-lg p-2 space-y-3 w-1/2 flex justify-between">
                     <div>
@@ -100,16 +100,16 @@ export default function GameContainer({ time1, time2, time1ponts, time2ponts, ti
             <div className="flex justify-center items-center mt-3">
                 <CardPalavra carta={cartaAtual}/>
             </div>
-            <div className="flex justify-center items-center gap-5 mt-5 w-full">
-                <div className="bg-red-500 hover:bg-red-800 text-white px-11 py-3 rounded-lg cursor-pointer flex justify-center items-center flex-col" onClick={proximaCarta}>
+            <div className="flex justify-center items-center gap-3 lg:gap-5 mt-5 max-w-68 lg:max-w-125 mx-auto">
+                <div className="bg-red-500 hover:bg-red-800 text-white px-5 lg:px-11 py-3 rounded-lg cursor-pointer flex justify-center items-center flex-col" onClick={proximaCarta}>
                     <LuCircleX size={32}/> 
                     <p className="text-sm">Errou</p>
                 </div>
-                <div className="bg-zinc-500 hover:bg-zinc-600 text-white px-11 py-3 rounded-lg cursor-pointer flex justify-center items-center flex-col" onClick={proximaCarta}>
+                <div className="bg-zinc-500 hover:bg-zinc-600 text-white px-5 lg:px-11 py-3 rounded-lg cursor-pointer flex justify-center items-center flex-col" onClick={proximaCarta}>
                     <LuSkipForward size={32}/>
                     <p className="text-sm">Pular</p>
                 </div>
-                <div className="bg-green-500 hover:bg-green-600 text-white px-11 py-3 rounded-lg cursor-pointer flex justify-center items-center flex-col" onClick={acertou}>
+                <div className="bg-green-500 hover:bg-green-600 text-white px-5 lg:px-11 py-3 rounded-lg cursor-pointer flex justify-center items-center flex-col" onClick={acertou}>
                     <LuCircleCheckBig size={32}/>
                     <p className="text-sm">Acertou</p>
                 </div>

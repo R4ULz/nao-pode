@@ -11,7 +11,7 @@ type Props = {
 
 export default function ContainerTimes({ time1, time2, onVoltar, time1ponts, time2ponts, onPlay, timeDavez, jogadorDaVez }: Props) {
     return (
-        <div className="bg-white w-96 rounded-2xl shadow-2xl flex-row justify-center items-center p-5">
+        <div className="bg-white max-w-84 lg:max-w-96 rounded-2xl shadow-2xl flex-row justify-center items-center p-5">
             <div className="flex justify-between items-center gap-5">
                 <div className="bg-gray-100 rounded-lg p-2 space-y-3 w-60">
                     <p className="text-zinc-800 text-sm">Time 1</p>

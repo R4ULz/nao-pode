@@ -33,7 +33,7 @@ export default function ContainerPrincipal({ nomes, setNomes, podeComecar, onSta
     }
 
     return (
-        <div className="bg-white w-96 min-h-96 rounded-2xl shadow-2xl flex-row justify-center items-center p-5">
+        <div className="bg-white w-96 min-h-96 rounded-2xl shadow-2xl flex-row justify-center items-center p-4">
             <div className="flex justify-center items-center">
                 <img src={donwload} alt="Logo" className="size-40 flex "/>
             </div>
@@ -49,7 +49,7 @@ export default function ContainerPrincipal({ nomes, setNomes, podeComecar, onSta
                     <input type="text" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleAddNome()} placeholder='Nome do participante' className='border-2 border-zinc-400 rounded-lg focus:outline-none focus:border-violet-950 focus:ring-2 focus:ring-violet-950 w-full h-10 px-5'/>
                 </div>
                 <div className='w-1/4'>
-                    <button className='bg-indigo-800 text-zinc-100 w-full h-10 rounded-lg px-2 cursor-pointer' onClick={handleAddNome}>Adicionar</button>
+                    <button className='bg-indigo-800 text-zinc-100 w-full h-10 rounded-lg text-sm lg:text-md lg:px-2 cursor-pointer' onClick={handleAddNome}>Adicionar</button>
                 </div>
             </div>
             {nomes.length > 0 && (
