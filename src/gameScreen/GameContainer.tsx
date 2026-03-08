@@ -28,7 +28,7 @@ const cartas = cartasJson as Carta[];
 const TAM_RODADA = 5;
 
 export default function GameContainer({ time1, time2, time1ponts, time2ponts, timeDavez, onPontuar, onFimRodada }: GameContainerProps) {
-    const { secondsLeft } = useCountdown(30, {autoStart: true, onFinish: finalizarRodada});
+    const { secondsLeft } = useCountdown(60, {autoStart: true, onFinish: finalizarRodada});
     const [rodada, setRodada] = useState<Carta[]>([]);
     const [rodadaIndex, setRodadaIndex] = useState(0);
 
