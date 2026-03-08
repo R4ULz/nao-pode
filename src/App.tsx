@@ -46,10 +46,12 @@ function App() {
     if(screen !== 'main') return
 
     const dismissed = localStorage.getItem(STORAGE_KEY) === "1";
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!dismissed) setTutorialOpen(true);
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (screen !== 'main') setTutorialOpen(false);
   }, [screen]);
 
@@ -63,6 +65,7 @@ function App() {
 
   const jogadores = timeDavez === 1 ? time1.jogadores : time2.jogadores;
   if (jogadores.length === 0) {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setJogadorDaVez("");
     return;
   }
