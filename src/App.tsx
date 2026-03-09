@@ -92,7 +92,11 @@ function App() {
   }
 
   function onPontuar(timeId: 1 | 2, delta: number = 1) {
-    setTimes(prev => prev.map(t => t.id === timeId ? { ...t, pontos: t.pontos + delta } : t))
+    setTimes(prev => prev.map(t => {
+      if (t.id !== timeId) return t;
+      const novosPontos = Math.max(0, t.pontos + delta);
+      return { ...t, pontos: novosPontos };
+    }))
   }
 
   function onFimRodada() {

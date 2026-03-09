@@ -28,7 +28,7 @@ const cartas = cartasJson as Carta[];
 const TAM_RODADA = 5;
 
 export default function GameContainer({ time1, time2, time1ponts, time2ponts, timeDavez, onPontuar, onFimRodada }: GameContainerProps) {
-    const { secondsLeft } = useCountdown(30, {autoStart: true, onFinish: finalizarRodada});
+    const { secondsLeft } = useCountdown(60, {autoStart: true, onFinish: finalizarRodada});
     const [rodada, setRodada] = useState<Carta[]>([]);
     const [rodadaIndex, setRodadaIndex] = useState(0);
 
@@ -59,6 +59,11 @@ export default function GameContainer({ time1, time2, time1ponts, time2ponts, ti
         onPontuar(timeDavez, 1);
         proximaCarta();
         console.log("Game timeDavez:", timeDavez);
+    }
+
+    function errou(){
+        onPontuar(timeDavez, -1);
+        proximaCarta();
     }
 
     if(!cartaAtual){
@@ -101,7 +106,7 @@ export default function GameContainer({ time1, time2, time1ponts, time2ponts, ti
                 <CardPalavra carta={cartaAtual}/>
             </div>
             <div className="flex justify-center items-center gap-3 lg:gap-5 mt-5 max-w-68 lg:max-w-125 mx-auto">
-                <div className="bg-red-500 hover:bg-red-800 text-white px-5 lg:px-11 py-3 rounded-lg cursor-pointer flex justify-center items-center flex-col" onClick={proximaCarta}>
+                <div className="bg-red-500 hover:bg-red-800 text-white px-5 lg:px-11 py-3 rounded-lg cursor-pointer flex justify-center items-center flex-col" onClick={errou}>
                     <LuCircleX size={32}/> 
                     <p className="text-sm">Errou</p>
                 </div>
