@@ -140,7 +140,7 @@
   { "palavra": "MEIA", "proibidas": ["PÉ", "SAPATO", "ROUPA", "PAR", "TORNOZELO"] },
   { "palavra": "MELANCIA", "proibidas": ["FRUTA", "VERDE", "VERMELHA", "SEMENTE", "SUCO"] },
   { "palavra": "MESA", "proibidas": ["CADEIRA", "COMER", "SALA", "COZINHA", "TAMPO"] },
-  { "palavra": "MEXERICa", "proibidas": ["FRUTA", "CASCA", "GOMO", "CHEIRO", "LARANJA"] },
+  { "palavra": "MEXERICA", "proibidas": ["FRUTA", "CASCA", "GOMO", "CHEIRO", "LARANJA"] },
   { "palavra": "MICROFONE", "proibidas": ["CANTAR", "VOZ", "SOM", "PALCO", "GRAVAR"] },
   { "palavra": "MOCHILA", "proibidas": ["COSTAS", "ESCOLA", "BOLSA", "ALÇA", "CARREGAR"] },
   { "palavra": "MOEDA", "proibidas": ["DINHEIRO", "TROCO", "METAL", "CARA", "COROA"] },

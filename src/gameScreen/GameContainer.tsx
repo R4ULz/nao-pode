@@ -1,8 +1,7 @@
 import { LuCircleCheckBig, LuCircleX, LuSkipForward, LuTimer } from "react-icons/lu";
 import CardPalavra from "./CardPalavra";
 import { useCountdown } from "../hooks/useCountdown";
-import { useEffect, useState } from "react";
-import cartasJson from "../data/palavras.json";
+import { useState } from "react";
 import type { Carta } from "../models/Cartas";
 
 type GameContainerProps = {  
@@ -13,53 +12,15 @@ type GameContainerProps = {
     timeDavez: 1 | 2;
     onPontuar: (timeId: 1 | 2, delta: number) => void;
     onFimRodada: () => void;
+    rodada: Carta[];
 };
 
-function embaralharPalavras<T>(arr: T[]) {  
-    const a = [...arr];
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
 
-const cartas = cartasJson as Carta[];
 const TAM_RODADA = 5;
 
-export default function GameContainer({ time1, time2, time1ponts, time2ponts, timeDavez, onPontuar, onFimRodada }: GameContainerProps) {
+export default function GameContainer({ rodada, time1, time2, time1ponts, time2ponts, timeDavez, onPontuar, onFimRodada }: GameContainerProps) {
     const { secondsLeft } = useCountdown(60, {autoStart: true, onFinish: finalizarRodada});
-    const [rodada, setRodada] = useState<Carta[]>([]);
     const [rodadaIndex, setRodadaIndex] = useState(0);
-    const [deckEmbaralhado, setDeckEmbaralhado] = useState<Carta[]>([]);
-    const [deckIndex, setDeckIndex] = useState(0);
-
-
-    useEffect(() => {  
-        const deck = embaralharPalavras(cartas);  
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setDeckEmbaralhado(deck);  
-        setDeckIndex(0);  
-    }, []);
-
-    useEffect(() => {
-        if (deckEmbaralhado.length === 0) return;
-
-        let novoIndex = deckIndex;
-        let novoDeck = deckEmbaralhado;
-
-        // Se não há cartas suficientes para a próxima rodada, embaralha tudo novamente
-        if (novoIndex + TAM_RODADA > deckEmbaralhado.length) {
-            novoDeck = embaralharPalavras(cartas);
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setDeckEmbaralhado(novoDeck);
-            novoIndex = 0;
-        }
-
-        setRodada(novoDeck.slice(novoIndex, novoIndex + TAM_RODADA));
-        setDeckIndex(novoIndex + TAM_RODADA);
-        setRodadaIndex(0);
-    }, [time1ponts, time2ponts]);
 
     const cartaAtual = rodada[rodadaIndex];
 
