@@ -50,6 +50,8 @@ function App() {
   const [rodada, setRodada] = useState<Carta[]>([]);
   const META_PONTOS = 20;
 
+  console.log({deck, deckIndex})
+
   useEffect(() => {
     if (screen !== 'main') return
 
